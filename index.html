@@ -114,4 +114,28 @@ document.querySelectorAll('.pricing-stage .plan').forEach(card=>{
  });
 });
 switchPlan('annual');
+
+/* === Interceptor de anchors internos para funcionar dentro de iframe Wix === */
+(function(){
+ function handleAnchorClick(e){
+  const a=e.target.closest('a[href^="#"]');
+  if(!a)return;
+  const href=a.getAttribute('href');
+  if(!href||href==='#')return;
+  const id=href.substring(1);
+  const t=document.getElementById(id);
+  if(!t)return;
+  e.preventDefault();
+  if(window.parent!==window){
+   const rect=t.getBoundingClientRect();
+   const absY=rect.top+window.scrollY;
+   try{
+    window.parent.postMessage({type:'ptp:scrollTo',y:absY,id:id},'*');
+   }catch(err){}
+  }else{
+   t.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+ }
+ document.addEventListener('click',handleAnchorClick);
+})();
 </script></body></html>
