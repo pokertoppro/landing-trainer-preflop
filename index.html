@@ -115,22 +115,25 @@ document.querySelectorAll('.pricing-stage .plan').forEach(card=>{
 });
 switchPlan('annual');
 
-/* === v8: Interceptor de anchors + comunicacion con Wix padre === */
+/* === v9: Interceptor + envio a parent Y top === */
 (function(){
  const IN_IFRAME = window.parent !== window;
- console.log('[PTP-LANDING] v8 cargado. En iframe?', IN_IFRAME);
+ console.log('[PTP-LANDING] v9 cargado. En iframe?', IN_IFRAME);
  
- // Al cargar, decir hola al padre para confirmar que el canal funciona
- if(IN_IFRAME){
-  try{
-   window.parent.postMessage({type:'ptp:hello',ver:'v8'},'*');
-   console.log('[PTP-LANDING] postMessage hello enviado al padre');
-  }catch(e){
-   console.log('[PTP-LANDING] error enviando hello:',e);
-  }
+ function sendToParents(msg){
+  const targets = [];
+  try{ if(window.parent && window.parent !== window) targets.push(window.parent); }catch(e){}
+  try{ if(window.top && window.top !== window && window.top !== window.parent) targets.push(window.top); }catch(e){}
+  targets.forEach(t => {
+   try{ t.postMessage(msg, '*'); }catch(e){}
+  });
+  console.log('[PTP-LANDING] msg enviado a', targets.length, 'targets:', msg);
  }
  
- // Interceptor de todos los clicks en anchors
+ if(IN_IFRAME){
+  sendToParents({type:'ptp:hello', ver:'v9'});
+ }
+ 
  function handleAnchorClick(e){
   const a=e.target.closest('a[href^="#"]');
   if(!a)return;
@@ -138,23 +141,19 @@ switchPlan('annual');
   if(!href||href==='#')return;
   const id=href.substring(1);
   const t=document.getElementById(id);
-  if(!t){console.log('[PTP-LANDING] target no encontrado:',id);return;}
+  if(!t)return;
   
   e.preventDefault();
   const rect=t.getBoundingClientRect();
   const absY=rect.top+window.scrollY;
-  console.log('[PTP-LANDING] Click en',href,'absY=',absY,'inIframe=',IN_IFRAME);
   
   if(IN_IFRAME){
-   try{
-    window.parent.postMessage({type:'ptp:scrollTo',y:absY,id:id},'*');
-    console.log('[PTP-LANDING] postMessage scrollTo enviado');
-   }catch(err){console.log('[PTP-LANDING] error postMessage:',err);}
+   sendToParents({type:'ptp:scrollTo', y:absY, id:id});
   }else{
    t.scrollIntoView({behavior:'smooth',block:'start'});
   }
  }
  document.addEventListener('click',handleAnchorClick);
- console.log('[PTP-LANDING] interceptor de clicks instalado');
+ console.log('[PTP-LANDING] v9 interceptor instalado');
 })();
 </script></body></html>
