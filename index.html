@@ -115,8 +115,22 @@ document.querySelectorAll('.pricing-stage .plan').forEach(card=>{
 });
 switchPlan('annual');
 
-/* === Interceptor de anchors internos para funcionar dentro de iframe Wix === */
+/* === v8: Interceptor de anchors + comunicacion con Wix padre === */
 (function(){
+ const IN_IFRAME = window.parent !== window;
+ console.log('[PTP-LANDING] v8 cargado. En iframe?', IN_IFRAME);
+ 
+ // Al cargar, decir hola al padre para confirmar que el canal funciona
+ if(IN_IFRAME){
+  try{
+   window.parent.postMessage({type:'ptp:hello',ver:'v8'},'*');
+   console.log('[PTP-LANDING] postMessage hello enviado al padre');
+  }catch(e){
+   console.log('[PTP-LANDING] error enviando hello:',e);
+  }
+ }
+ 
+ // Interceptor de todos los clicks en anchors
  function handleAnchorClick(e){
   const a=e.target.closest('a[href^="#"]');
   if(!a)return;
@@ -124,18 +138,23 @@ switchPlan('annual');
   if(!href||href==='#')return;
   const id=href.substring(1);
   const t=document.getElementById(id);
-  if(!t)return;
+  if(!t){console.log('[PTP-LANDING] target no encontrado:',id);return;}
+  
   e.preventDefault();
-  if(window.parent!==window){
-   const rect=t.getBoundingClientRect();
-   const absY=rect.top+window.scrollY;
+  const rect=t.getBoundingClientRect();
+  const absY=rect.top+window.scrollY;
+  console.log('[PTP-LANDING] Click en',href,'absY=',absY,'inIframe=',IN_IFRAME);
+  
+  if(IN_IFRAME){
    try{
     window.parent.postMessage({type:'ptp:scrollTo',y:absY,id:id},'*');
-   }catch(err){}
+    console.log('[PTP-LANDING] postMessage scrollTo enviado');
+   }catch(err){console.log('[PTP-LANDING] error postMessage:',err);}
   }else{
    t.scrollIntoView({behavior:'smooth',block:'start'});
   }
  }
  document.addEventListener('click',handleAnchorClick);
+ console.log('[PTP-LANDING] interceptor de clicks instalado');
 })();
 </script></body></html>
