@@ -122,8 +122,8 @@ function nextHand(){
 }
 function paymentInfo(plan){
  const URLS = {
-   mensual: 'https://www.pokertoppro.com/checkout?checkoutId=5e851ee2-b378-4221-af83-94dacd4998fc&disableContinueShopping=true',
-   anual:   'https://www.pokertoppro.com/checkout?checkoutId=4e2f2f79-3b42-43ff-940b-77c27255f871&disableContinueShopping=true'
+   mensual: 'https://www.pokertoppro.com/pricing-plans/pago-poker-desde-0?planIds=52d91062-9e32-442b-bfa4-b74650ae7cff&destination=/entrenamiento-preflop&referral=restricted-page&referralId=uca2c',
+   anual:   'https://www.pokertoppro.com/pricing-plans/pago-poker-desde-0?planIds=d99704d9-822a-4674-b260-e6fe08ba0da0&destination=/entrenamiento-preflop&referral=restricted-page&referralId=uca2c'
  };
  const url = URLS[plan];
  if (!url) return;
@@ -207,7 +207,7 @@ switchPlan('annual');
 
 <script>
 /* ===== MODAL JS (v10) ===== */
-const CHECKOUT_URLS={monthly:'https://www.pokertoppro.com/checkout?checkoutId=5e851ee2-b378-4221-af83-94dacd4998fc&disableContinueShopping=true',annual:'https://www.pokertoppro.com/checkout?checkoutId=4e2f2f79-3b42-43ff-940b-77c27255f871&disableContinueShopping=true'};
+const CHECKOUT_URLS={monthly:'https://www.pokertoppro.com/pricing-plans/pago-poker-desde-0?planIds=52d91062-9e32-442b-bfa4-b74650ae7cff&destination=/entrenamiento-preflop&referral=restricted-page&referralId=uca2c',annual:'https://www.pokertoppro.com/pricing-plans/pago-poker-desde-0?planIds=d99704d9-822a-4674-b260-e6fe08ba0da0&destination=/entrenamiento-preflop&referral=restricted-page&referralId=uca2c'};
 
 function openPtpModal(originEl){
  const m=document.getElementById('ptpModal');
