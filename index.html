@@ -47,35 +47,47 @@
 }
 @media (prefers-reduced-motion:reduce){.pricing-stage .plan{transition:none;}}
 
-/* ===== MODAL ELIGE TU PLAN (v11 - posicion dinamica) ===== */
-.ptp-modal-backdrop{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(2,10,25,.88);backdrop-filter:blur(8px);z-index:9999;display:none;animation:ptpFadeIn .25s ease}
+/* ===== MODAL ELIGE TU PLAN (v22 - diseño premium, posición v15) ===== */
+.ptp-modal-backdrop{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,4,14,.88);backdrop-filter:blur(8px);z-index:9999;display:none;animation:ptpFadeIn .25s ease}
 .ptp-modal-backdrop.is-open{display:block}
 @keyframes ptpFadeIn{from{opacity:0}to{opacity:1}}
-.ptp-modal{position:absolute;left:50%;transform:translateX(-50%);width:calc(100% - 40px);max-width:900px;background:linear-gradient(180deg,#02132a 0%,#061e38 100%);border:1px solid rgba(246,189,50,.4);border-radius:20px;padding:40px 32px;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 60px rgba(246,189,50,.15);box-sizing:border-box}
-.ptp-modal-close{position:absolute;top:16px;right:16px;background:rgba(255,255,255,.08);border:none;color:#f6f2e6;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:22px;line-height:1;transition:all .2s;z-index:2}
-.ptp-modal-close:hover{background:rgba(255,255,255,.18);transform:rotate(90deg)}
-.ptp-modal h2{color:#f6f2e6;text-align:center;font-family:'Cinzel',serif;font-size:28px;margin:0 0 8px;letter-spacing:1px}
-.ptp-modal h2 .gold{color:#f6bd32}
-.ptp-modal .ptp-modal-sub{text-align:center;color:#a8c4e0;margin:0 0 32px;font-size:15px}
-.ptp-modal .ptp-modal-sub strong{color:#f6bd32}
-.ptp-plans-wrap{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-@media(max-width:640px){.ptp-plans-wrap{grid-template-columns:1fr;gap:12px}.ptp-modal{padding:20px 16px}.ptp-modal h2{font-size:20px;margin:0 0 4px}.ptp-modal .ptp-modal-sub{margin:0 0 16px;font-size:13px}.ptp-plan-card{padding:16px 14px}.ptp-plan-card h3{font-size:18px}.ptp-plan-card .ptp-plan-price{font-size:28px}.ptp-plan-card ul li{font-size:12px}.ptp-plan-cta{padding:11px;font-size:13px}}
-.ptp-plan-card{background:rgba(255,255,255,.03);border:1.5px solid rgba(255,255,255,.1);border-radius:16px;padding:24px 20px;cursor:pointer;transition:all .25s;position:relative;display:flex;flex-direction:column}
-.ptp-plan-card:hover{border-color:rgba(246,189,50,.6);background:rgba(246,189,50,.04);transform:translateY(-3px)}
-.ptp-plan-card.featured{border-color:rgba(246,189,50,.6);background:rgba(246,189,50,.05)}
-.ptp-plan-card.featured::before{content:'♛ MEJOR OFERTA';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,#f6bd32,#ffd45e);color:#02132a;padding:5px 14px;border-radius:12px;font-size:11px;font-weight:800;letter-spacing:1.2px;white-space:nowrap}
-.ptp-plan-card h3{color:#f6f2e6;font-family:'Cinzel',serif;font-size:22px;margin:0 0 4px;letter-spacing:1px}
-.ptp-plan-card .ptp-plan-meta{color:#a8c4e0;font-size:13px;margin:0 0 16px}
-.ptp-plan-card .ptp-plan-price{color:#f6f2e6;font-size:34px;font-weight:900;margin:0 0 4px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
-.ptp-plan-card .ptp-plan-price small{font-size:14px;font-weight:500;color:#a8c4e0}
-.ptp-plan-card .ptp-plan-strike{text-decoration:line-through;color:#8ba6c4;font-size:18px;font-weight:500}
-.ptp-plan-card .ptp-plan-badge{display:inline-block;background:rgba(246,189,50,.15);border:1px solid rgba(246,189,50,.4);padding:4px 10px;border-radius:10px;color:#ffe08a;font-size:11px;font-weight:700;letter-spacing:.8px;margin:8px 0 14px}
-.ptp-plan-card ul{list-style:none;padding:0;margin:0 0 18px;flex:1}
-.ptp-plan-card ul li{color:#d7e3f4;font-size:13px;padding:5px 0;padding-left:20px;position:relative}
-.ptp-plan-card ul li::before{content:'✓';position:absolute;left:0;color:#f6bd32;font-weight:800}
-.ptp-plan-cta{display:block;width:100%;background:linear-gradient(90deg,#f6bd32,#ffd45e);color:#02132a;border:none;padding:13px;border-radius:10px;font-family:'Cinzel',serif;font-weight:700;letter-spacing:1px;cursor:pointer;font-size:14px;text-transform:uppercase;transition:all .2s;text-align:center}
-.ptp-plan-cta:hover{background:linear-gradient(90deg,#ffd45e,#ffdf7a);transform:translateY(-1px);box-shadow:0 6px 20px rgba(246,189,50,.3)}
-.ptp-plan-trust{text-align:center;color:#8ba6c4;font-size:12px;margin:18px 0 0}
+.ptp-modal{position:absolute;left:50%;transform:translateX(-50%);width:calc(100% - 40px);max-width:900px;background:radial-gradient(ellipse at 105% 115%,rgba(12,80,154,.33),transparent 43%),linear-gradient(145deg,#071a34 0%,#031126 52%,#041b37 100%);border:1.5px solid #0986e7;border-radius:28px;padding:40px 32px;box-shadow:0 0 0 1px rgba(68,171,255,.22),0 0 44px rgba(0,111,255,.22),0 30px 80px rgba(0,0,0,.65);box-sizing:border-box;isolation:isolate}
+.ptp-modal-close{position:absolute;top:16px;right:16px;background:#122741;border:1px solid #34516c;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:24px;line-height:1;transition:all .2s;z-index:3}
+.ptp-modal-close:hover{background:#244467;transform:rotate(90deg)}
+.ptp-modal-eyebrow{font-size:12px;letter-spacing:3px;font-weight:800;color:#ffc132;display:flex;align-items:center;justify-content:center;gap:16px;margin:0 0 10px;text-transform:uppercase}
+.ptp-modal-eyebrow:before,.ptp-modal-eyebrow:after{content:"";display:block;width:44px;height:1px;background:linear-gradient(90deg,transparent,#ffbd24)}
+.ptp-modal-eyebrow:after{transform:rotate(180deg)}
+.ptp-modal h2{color:#f6f2eb;text-align:center;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:38px;margin:0 0 10px;letter-spacing:1px}
+.ptp-modal h2 .gold{color:#ffe889;text-shadow:0 0 24px rgba(255,198,50,.18)}
+.ptp-modal .ptp-modal-sub{text-align:center;color:#c8d5e8;margin:0 0 30px;font-size:15px}
+.ptp-modal .ptp-modal-sub strong{color:#ffc42e}
+.ptp-plans-wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:22px;align-items:stretch}
+@media(max-width:640px){.ptp-plans-wrap{grid-template-columns:1fr;gap:14px}.ptp-modal{padding:28px 18px}.ptp-modal h2{font-size:26px;margin:0 0 6px}.ptp-modal .ptp-modal-sub{margin:0 0 20px;font-size:13px}.ptp-plan-card{padding:20px 16px}.ptp-plan-card h3{font-size:22px}.ptp-plan-card .ptp-plan-price{font-size:30px}.ptp-plan-card ul li{font-size:12.5px}.ptp-plan-cta{padding:12px;font-size:13px}.ptp-modal-eyebrow{font-size:10px;gap:10px}.ptp-modal-eyebrow:before,.ptp-modal-eyebrow:after{width:22px}}
+.ptp-plan-card{background:linear-gradient(152deg,#061a34,#041126);border:1.5px solid #2770b3;border-radius:20px;padding:26px 22px;cursor:pointer;transition:transform .2s,box-shadow .2s;position:relative;display:flex;flex-direction:column;box-shadow:inset 0 0 28px rgba(19,86,166,.12)}
+.ptp-plan-card:hover{transform:translateY(-3px);box-shadow:inset 0 0 28px rgba(19,86,166,.2),0 10px 24px rgba(0,0,0,.3)}
+.ptp-plan-card.featured{background:radial-gradient(ellipse at 73% 29%,rgba(109,78,22,.23),transparent 48%),linear-gradient(150deg,#101d29,#07101d);border:2px solid #ffc63e;box-shadow:0 0 16px rgba(255,182,30,.38),inset 0 0 25px rgba(241,161,24,.06)}
+.ptp-plan-card.featured::before{content:'♛ MEJOR OFERTA';position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:linear-gradient(105deg,#ffe990,#ffba11);color:#06101c;border-radius:99px;white-space:nowrap;padding:8px 20px;font-weight:900;font-size:12px;letter-spacing:1.2px;box-shadow:0 0 22px rgba(255,190,33,.6)}
+.ptp-plan-card h3{color:#f6f2eb;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:26px;margin:0 0 4px;letter-spacing:1px;line-height:1.1}
+.ptp-plan-card .ptp-plan-meta{color:#b3c4d8;font-size:13px;margin:0 0 16px}
+.ptp-plan-card .ptp-plan-price{color:#f6f2eb;font-weight:900;font-size:36px;letter-spacing:-1.5px;line-height:1.2;margin:0 0 4px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.ptp-plan-card .ptp-plan-price small{font-size:14px;font-weight:500;color:#cad5e3;letter-spacing:0}
+.ptp-plan-card .ptp-plan-strike{text-decoration:line-through;color:#9eacc0;font-size:17px;font-weight:400;letter-spacing:0}
+.ptp-plan-card.featured .ptp-plan-price{color:#ffc02e}
+.ptp-plan-card .ptp-plan-badge{display:inline-block;background:linear-gradient(90deg,rgba(255,190,36,.14),rgba(255,190,36,.05));border:1px solid rgba(250,192,53,.65);padding:6px 12px;border-radius:100px;color:#ffd057;font-size:12px;font-weight:800;letter-spacing:.8px;margin:12px 0 14px;align-self:flex-start}
+.ptp-plan-card .ptp-bonus-box{margin:14px 0 4px;padding:14px 10px;border:2px solid #ffcb44;border-radius:14px;text-align:center;background:linear-gradient(145deg,rgba(247,179,39,.16),rgba(227,175,55,.06));box-shadow:0 0 18px rgba(255,192,46,.2),inset 0 0 20px rgba(255,197,70,.07)}
+.ptp-plan-card .ptp-bonus-ribbon{display:inline-block;padding:4px 14px;margin:-26px auto 4px;border-radius:30px;background:linear-gradient(110deg,#fff199,#ffc128);color:#171202;font-weight:900;font-size:11px;letter-spacing:1px}
+.ptp-plan-card .ptp-bonus-title{color:#ffcb47;font-family:Georgia,serif;font-weight:700;font-size:24px;margin:3px 0;line-height:1.1}
+.ptp-plan-card .ptp-bonus-sub{font-size:13px;margin:3px 0;color:#fff;font-weight:700}
+.ptp-plan-card .ptp-bonus-tiny{font-size:11px;font-style:italic;color:#c1c7d1}
+.ptp-plan-card ul{list-style:none;padding:0;margin:14px 0 18px;flex:1;display:grid;gap:10px}
+.ptp-plan-card ul li{color:#e0e8f2;font-size:14px;padding-left:22px;position:relative;line-height:1.4}
+.ptp-plan-card ul li::before{content:'✓';position:absolute;left:0;color:#ffbe2b;font-weight:900;font-size:16px;top:-1px}
+.ptp-plan-cta{display:block;width:100%;border-radius:12px;padding:14px;font-weight:900;letter-spacing:1px;cursor:pointer;font-size:14px;text-transform:uppercase;transition:transform .18s,box-shadow .18s;text-align:center;border:none;font-family:inherit;margin-top:auto}
+.ptp-plan-cta:hover{transform:translateY(-2px)}
+.ptp-plan-card:not(.featured) .ptp-plan-cta{background:linear-gradient(#143153,#0a1a30);color:#f7faff;border:1px solid #3987d4;box-shadow:inset 0 0 20px rgba(19,90,175,.15)}
+.ptp-plan-card.featured .ptp-plan-cta{background:linear-gradient(#ffe784,#ffba12);color:#091322;border:1px solid #ffe289;box-shadow:0 0 19px rgba(255,184,37,.38)}
+.ptp-plan-trust{text-align:center;color:#bbcee2;font-size:13px;margin:22px 0 0}
+.ptp-plan-trust .check{color:#d3e5f9;font-weight:900}
 
 </style></head><body>
 <main>
@@ -84,7 +96,7 @@
 <section class="section intro" id="conoce"><div class="shell intro-grid"><div><div class="eyebrow">♦ CONOCE EL TRAINER</div><h2 class="intro-title">Tu juego empieza<br/><span class="gold">antes del flop.</span></h2><p>Entrena desde cada posición y aprende a reconocer cómo cambia tu estrategia frente a distintas acciones. Una experiencia visual, práctica y preparada para sesiones de estudio cortas o intensivas.</p><ul class="benefits"><li><span class="small-icon">♧</span>Rangos de Open Raise</li><li><span class="small-icon">▱</span>Raise over limp y Cold Call</li><li><span class="small-icon">ϟ</span>3-Bet, Squeeze y Call vs 3-Bet</li><li><span class="small-icon">♢</span>4-Bet y SB vs BB</li><li><span class="small-icon">▥</span>Resultados y clasificación de jugadores</li></ul><button type="button" class="btn btn-gold" data-open-plans>QUIERO ENTRENAR ↗</button></div><div class="range-box glow-panel"><div class="correct">✓ CORRECTO</div><div class="range-info"><strong>3b</strong> · Hero en <strong>BTN</strong> vs OR en <strong>CO</strong><br/>Tu mano: <strong>ATs</strong> · Correcta: <strong>CALL</strong></div><div class="range-name">RANGO COMPLETO DESDE BTN vs CO</div><div aria-label="Ejemplo visual de rango preflop de 169 combinaciones" class="range-grid" id="rangeGrid"></div><div class="legend"><span><i class="sw" style="background:#c8393b"></i>Raise</span><span><i class="sw" style="background:#309163"></i>Call</span><span><i class="sw" style="background:#1d334e"></i>Fold</span></div><div class="range-actions"><button class="btn btn-outline" onclick="document.getElementById('conoce').scrollIntoView({behavior:'smooth'})" type="button">CERRAR</button><button class="btn btn-gold" onclick="nextHand()" type="button">SIGUIENTE MANO →</button></div></div></div></section>
 <section class="section" id="publico"><div class="shell"><h2 class="heading">¿PARA <span class="gold">QUIÉN</span> ES?</h2><p class="lead">Si juegas o quieres jugar cash game en vivo y quieres fortalecer tu preflop, esto es para ti.</p><div class="audience"><article class="aud-card glow-panel"><div class="aud-top"><span class="aud-num">01</span><span class="aud-icon">🪙</span></div><h3>JUGADORES DE <span class="gold">CASH EN VIVO</span></h3><p>Si juegas 1/2, 1/3, 2/5 o superior y quieres reducir errores preflop costosos.</p></article><article class="aud-card glow-panel"><div class="aud-top"><span class="aud-num">02</span><span class="aud-icon">📚</span></div><h3>QUIEN ESTUDIA <span class="gold">POR SU CUENTA</span></h3><p>Si estudias rangos en vídeos o libros, pero necesitas repeticiones reales para interiorizarlos.</p></article><article class="aud-card glow-panel"><div class="aud-top"><span class="aud-num">03</span><span class="aud-icon">📈</span></div><h3>JUGADORES <span class="gold">EN ESTANCAMIENTO</span></h3><p>Si sientes que tu nivel no sube y sabes que aún puedes mejorar tus decisiones.</p></article></div></div></section>
 <section class="section" id="planes"><div class="shell"><h2 class="heading">ELIGE TU <span class="gold">PLAN</span></h2><p class="lead"><strong style="color:#f6bd32">🔥 Precios de lanzamiento por tiempo limitado</strong> · 7 días de prueba gratis en los dos planes · Cancela cuando quieras.</p><div aria-label="Comparador de planes de suscripción" class="pricing-carousel" data-active-plan="annual">
-<div class="pricing-stage" id="pricingStage"><article aria-label="Plan mensual" class="plan monthly glow-panel" onclick="selectPlanFromCard('monthly', event)" role="group" tabindex="0"><h3>▢ MENSUAL</h3><p class="meta">Flexible mes a mes</p><div class="price">$14.99 <small>/mes</small> <small style="text-decoration:line-through;color:#8ba6c4;font-size:20px;font-weight:500;margin-left:8px;">$19.99</small></div><span class="subtle" style="display:inline-block;background:rgba(246,189,50,.12);border:1px solid rgba(246,189,50,.4);padding:4px 10px;border-radius:12px;color:#ffe08a;font-size:12px;font-weight:700;letter-spacing:1px;margin:8px 0 12px;">🔥 PRECIO DE LANZAMIENTO · AHORRAS $5/MES</span><br><span class="subtle">7 días gratis para probar</span><ul><li>Acceso ilimitado al Trainer Preflop</li><li>8 spots de entrenamiento</li><li>Rangos profesionales de póker en vivo</li><li>Leader Board y ranking competitivo</li><li>Estadísticas y evaluación por sesión</li><li>Cancela cuando quieras</li></ul><button class="btn btn-outline" onclick="paymentInfo('mensual')" type="button">EMPIEZA MENSUAL</button></article><article aria-label="Plan anual, mejor oferta" class="plan annual glow-panel" onclick="selectPlanFromCard('annual', event)" role="group" tabindex="0"><div class="ribbon">♛ MEJOR OFERTA</div><h3>♛ ANUAL</h3><p class="meta">El mejor valor · Equivale a $9.92/mes</p><div class="price">$119 <small>/año</small> <small style="text-decoration:line-through;color:#8ba6c4;font-size:20px;font-weight:500;margin-left:8px;">$199</small></div><span class="saving">🔥 PRECIO DE LANZAMIENTO · AHORRAS $80</span><div style="margin:18px 0;padding:18px 16px;background:linear-gradient(135deg,rgba(246,189,50,.18) 0%,rgba(246,189,50,.08) 100%);border:2px solid rgba(246,189,50,.6);border-radius:12px;text-align:center;box-shadow:0 4px 20px rgba(246,189,50,.15)"><div style="display:inline-block;background:linear-gradient(90deg,#f6bd32,#ffd45e);color:#02132a;padding:4px 12px;border-radius:10px;font-size:11px;font-weight:800;letter-spacing:1.2px;margin-bottom:10px">🎁 BONO EXCLUSIVO</div><div style="font-family:'Cinzel',serif;font-size:26px;font-weight:900;color:#ffd45e;line-height:1.1;margin:4px 0 4px;letter-spacing:1px">3 MESES GRATIS</div><div style="color:#f6f2e6;font-size:14px;font-weight:600;margin:0">Trainer Preflop de Torneos</div><div style="color:#8ba6c4;font-size:11px;font-style:italic;margin-top:4px">(Próximamente)</div></div><ul><li>Acceso ilimitado al Trainer Preflop</li><li>8 spots de entrenamiento</li><li>Rangos profesionales de póker en vivo</li><li>Leader Board y ranking competitivo</li><li>Estadísticas y evaluación por sesión</li><li>Cancela cuando quieras</li><li><strong style="color:#ffe08a">Ofertas exclusivas en nuevos productos</strong></li></ul><button class="btn btn-gold" onclick="paymentInfo('anual')" type="button">EMPIEZA ANUAL →</button></article></div>
+<div class="pricing-stage" id="pricingStage"><article aria-label="Plan mensual" class="plan monthly glow-panel" onclick="selectPlanFromCard('monthly', event)" role="group" tabindex="0"><h3>▢ MENSUAL</h3><p class="meta">Flexible mes a mes</p><div class="price">$14.99 <small>/mes</small> <small style="text-decoration:line-through;color:#8ba6c4;font-size:20px;font-weight:500;margin-left:8px;">$19.99</small></div><span class="subtle" style="display:inline-block;background:rgba(246,189,50,.12);border:1px solid rgba(246,189,50,.4);padding:4px 10px;border-radius:12px;color:#ffe08a;font-size:12px;font-weight:700;letter-spacing:1px;margin:8px 0 12px;">🔥 PRECIO DE LANZAMIENTO · AHORRAS $5/MES</span><br><span class="subtle">7 días gratis para probar</span><ul><li>Acceso ilimitado al Trainer Preflop</li><li>8 spots de entrenamiento</li><li>Rangos profesionales de póker en vivo</li><li>Leader Board y ranking competitivo</li><li>Estadísticas y evaluación por sesión</li><li>Cancela cuando quieras</li></ul><button class="btn btn-outline" onclick="paymentInfo('mensual')" type="button">EMPIEZA MENSUAL</button></article><article aria-label="Plan anual, mejor oferta" class="plan annual glow-panel" onclick="selectPlanFromCard('annual', event)" role="group" tabindex="0"><div class="ribbon">♛ MEJOR OFERTA</div><h3>♛ ANUAL</h3><p class="meta">El mejor valor · Equivale a $9.92/mes</p><div class="price">$119 <small>/año</small> <small style="text-decoration:line-through;color:#8ba6c4;font-size:20px;font-weight:500;margin-left:8px;">$199</small></div><span class="saving">🔥 PRECIO DE LANZAMIENTO · AHORRAS $80</span><div style="margin:18px 0;padding:18px 16px;background:linear-gradient(135deg,rgba(246,189,50,.18) 0%,rgba(246,189,50,.08) 100%);border:2px solid rgba(246,189,50,.6);border-radius:12px;text-align:center;box-shadow:0 4px 20px rgba(246,189,50,.15)"><div style="display:inline-block;background:linear-gradient(90deg,#f6bd32,#ffd45e);color:#02132a;padding:4px 12px;border-radius:10px;font-size:11px;font-weight:800;letter-spacing:1.2px;margin-bottom:10px">🎁 BONO EXCLUSIVO</div><div style="font-family:'Cinzel',serif;font-size:26px;font-weight:900;color:#ffd45e;line-height:1.1;margin:4px 0 4px;letter-spacing:1px">3 MESES GRATIS</div><div style="color:#f6f2e6;font-size:14px;font-weight:600;margin:0">Trainer Preflop de Torneos</div><div style="color:#8ba6c4;font-size:11px;font-style:italic;margin-top:4px">(Próximamente)</div></div><ul><li>Todo lo del plan Mensual</li><li><strong style="color:#ffe08a">Ofertas exclusivas en nuevos productos</strong></li></ul><button class="btn btn-gold" onclick="paymentInfo('anual')" type="button">EMPIEZA ANUAL →</button></article></div>
 <div aria-label="Cambiar de plan" class="pricing-carousel-controls">
 <button aria-label="Ver plan mensual" class="carousel-arrow" onclick="switchPlan('monthly')" type="button"><span aria-hidden="true">‹</span></button>
 <div aria-label="Seleccionar plan" class="carousel-dots" role="group">
@@ -146,12 +158,13 @@ document.querySelectorAll('.pricing-stage .plan').forEach(card=>{
 });
 switchPlan('annual');
 </script>
-<!-- ===== MODAL ELIGE TU PLAN (v10) ===== -->
+<!-- ===== MODAL ELIGE TU PLAN (v22 - diseño premium, lógica v15) ===== -->
 <div class="ptp-modal-backdrop" id="ptpModal" aria-hidden="true" role="dialog">
  <div class="ptp-modal" role="document">
-  <button class="ptp-modal-close" aria-label="Cerrar" onclick="closePtpModal()">✕</button>
-  <p style="color:#f6bd32;font-size:11px;letter-spacing:2px;font-weight:700;margin:0 0 10px;text-transform:uppercase">Software educativo y de entrenamiento</p><h2>ELIGE TU <span class="gold">PLAN</span></h2>
-  <p class="ptp-modal-sub"><strong>🔥 Precios de lanzamiento</strong> · 7 días gratis · Cancela cuando quieras</p>
+  <button class="ptp-modal-close" aria-label="Cerrar" onclick="closePtpModal()">×</button>
+  <p class="ptp-modal-eyebrow">SOFTWARE EDUCATIVO Y DE ENTRENAMIENTO</p>
+  <h2>ELIGE TU <span class="gold">PLAN</span></h2>
+  <p class="ptp-modal-sub">🔥 <strong>Precios de lanzamiento</strong> · 7 días gratis · Cancela cuando quieras</p>
   <div class="ptp-plans-wrap">
 
    <div class="ptp-plan-card" onclick="goCheckout('monthly')">
@@ -173,11 +186,11 @@ switchPlan('annual');
     <p class="ptp-plan-meta">El mejor valor · Equivale a $9.92/mes</p>
     <div class="ptp-plan-price">$119 <small>/año</small> <span class="ptp-plan-strike">$199</span></div>
     <span class="ptp-plan-badge">🔥 AHORRAS $80</span>
-    <div style="margin:14px 0;padding:14px 12px;background:linear-gradient(135deg,rgba(246,189,50,.18) 0%,rgba(246,189,50,.08) 100%);border:2px solid rgba(246,189,50,.6);border-radius:12px;text-align:center;box-shadow:0 4px 20px rgba(246,189,50,.15)">
-     <div style="display:inline-block;background:linear-gradient(90deg,#f6bd32,#ffd45e);color:#02132a;padding:3px 10px;border-radius:8px;font-size:10px;font-weight:800;letter-spacing:1px;margin-bottom:8px">🎁 BONO EXCLUSIVO</div>
-     <div style="font-family:'Cinzel',serif;font-size:22px;font-weight:900;color:#ffd45e;line-height:1.1;margin:3px 0 3px;letter-spacing:1px">3 MESES GRATIS</div>
-     <div style="color:#f6f2e6;font-size:13px;font-weight:600;margin:0">Trainer Preflop de Torneos</div>
-     <div style="color:#8ba6c4;font-size:10px;font-style:italic;margin-top:3px">(Próximamente)</div>
+    <div class="ptp-bonus-box">
+     <span class="ptp-bonus-ribbon">🎁 BONO EXCLUSIVO</span>
+     <div class="ptp-bonus-title">3 MESES GRATIS</div>
+     <div class="ptp-bonus-sub">Trainer Preflop de Torneos</div>
+     <div class="ptp-bonus-tiny">(Próximamente)</div>
     </div>
     <ul>
      <li>Todo lo del plan Mensual</li>
@@ -188,7 +201,7 @@ switchPlan('annual');
    </div>
 
   </div>
-  <p class="ptp-plan-trust">✓ Sin compromiso · ✓ Cancela cuando quieras · ✓ Pago seguro</p>
+  <p class="ptp-plan-trust"><span class="check">✓</span> Sin compromiso · <span class="check">✓</span> Cancela cuando quieras · <span class="check">✓</span> Pago seguro</p>
  </div>
 </div>
 
